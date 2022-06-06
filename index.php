@@ -19,20 +19,23 @@
         </div>
     <div class="content">
         <?php
-            if (isset($_GET["nav"]) && $_GET["nav"] == "compay") {
+            session_start();
+            if (isset($_GET["nav"]) && $_GET["nav"] == "compay" && isset($_SESSION) && isset($_SESSION["status"])) {
                 include "blocks/compay.php";
-            } else if (isset($_GET["nav"]) && $_GET["nav"] == "addcompany") {
+            } else if (isset($_GET["nav"]) && $_GET["nav"] == "addcompany" && isset($_SESSION) && isset($_SESSION["status"])) {
                 include "blocks/add-company.php";
-            } else if (isset($_GET["nav"]) && $_GET["nav"] == "companylist") {
+            } else if (isset($_GET["nav"]) && $_GET["nav"] == "companylist" && isset($_SESSION) && isset($_SESSION["status"])) {
                 include "blocks/company-list.php";
-            } else if (isset($_GET["nav"]) && $_GET["nav"] == "add") {
+            } else if (isset($_GET["nav"]) && $_GET["nav"] == "add" && isset($_SESSION) && isset($_SESSION["status"])) {
                 include "blocks/add.php";
-            } else if (isset($_GET["nav"]) && $_GET["nav"] == "delete") {
+            } else if (isset($_GET["nav"]) && $_GET["nav"] == "delete" && isset($_SESSION) && isset($_SESSION["status"])) {
                 include "blocks/delete.php";
-            } else if (isset($_GET["nav"]) && $_GET["nav"] == "edit") {
+            } else if (isset($_GET["nav"]) && $_GET["nav"] == "edit" && isset($_SESSION) && isset($_SESSION["status"])) {
                 include "blocks/edit.php";
-            } else if (isset($_GET["nav"]) && $_GET["nav"] == "logout") {
+            } else if (isset($_GET["nav"]) && $_GET["nav"] == "logout" && isset($_SESSION) && isset($_SESSION["status"])) {
                 include "blocks/logout.php";
+            } else if (isset($_GET["nav"]) && $_GET["nav"] == "logoutadmin" && isset($_SESSION) && isset($_SESSION["status"])) {
+                include "blocks/logout-admin.php";
             } else {
                 include "blocks/admin.php";
             }

@@ -1,5 +1,4 @@
 <?php 
-    session_start();
     include "connection.php";
     $status = "";
     if(isset($_SESSION) && isset($_SESSION["companystatus"])) {
